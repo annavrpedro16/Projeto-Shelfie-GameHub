@@ -1,0 +1,94 @@
+.card,
+.cardRanked {
+  --capa-altura: 230px; /* altura da capa, usada também para posicionar a tábua */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.cardRanked { --capa-altura: 180px; }
+
+/* A tábua da prateleira: passa por baixo de todas as capas da fileira */
+.card::before,
+.cardRanked::before {
+  content: '';
+  position: absolute;
+  top: var(--capa-altura);
+  left: -1rem;
+  right: -1rem;
+  height: 14px;
+  background: var(--verde);
+  border-bottom: 8px solid var(--trilho);
+}
+
+.top {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  height: var(--capa-altura);
+  padding: 0;
+  background: none;
+  border: 0;
+  color: inherit;
+  text-align: left;
+}
+.top:hover .cover { filter: brightness(1.25); } /* a capa "acende" ao passar o mouse */
+
+.cover {
+  flex: 1;
+  height: 100%;
+}
+
+/* Número grande do ranking, um pouco escondido atrás da capa */
+.rank {
+  font-family: var(--fonte-titulo);
+  font-size: 11rem;
+  font-weight: 800;
+  line-height: 0.78;
+  color: var(--verde);
+  margin-right: -1.5rem;
+}
+
+.label,
+.labelRanked {
+  position: relative; /* fica por cima da tábua */
+  margin: 22px 0.5rem 0;
+  padding: 0.5rem 0.75rem;
+  background: var(--tinta);
+  color: var(--trilho);
+  border-radius: 2px;
+}
+
+/* Com número do ranking: a etiqueta fica só embaixo da capa */
+.labelRanked { margin-left: 35%; margin-right: 0; }
+
+.label h3,
+.labelRanked h3 {
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* nome grande demais termina em "…" */
+}
+
+.genres {
+  font-size: 0.78rem;
+  color: var(--verde);
+}
+
+.rating {
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+.rating span { color: #b7791f; }
+
+/* Os botões de ação dentro da etiqueta parecem links */
+.action { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.15rem; }
+.action button {
+  padding: 0;
+  background: none;
+  border: 0;
+  color: var(--verde);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-decoration: underline;
+}
+.action button:hover { color: var(--trilho); }

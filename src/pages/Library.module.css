@@ -1,0 +1,51 @@
+/* Usado também pela página de desejos */
+.header {
+  margin-top: 2rem;
+}
+.header h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.1;
+}
+.header p {
+  color: var(--suave);
+  font-size: 1.1rem;
+}
+
+/* Arrastar e soltar */
+.tip {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--suave);
+}
+
+/* Lista de status dentro da etiqueta do jogo */
+.statusSelect {
+  margin-top: 0.3rem;
+  width: 100%;
+  padding: 0.2rem 0.3rem;
+  border: 1px solid var(--verde);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--trilho);
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.draggable {
+  cursor: grab;
+}
+.draggable:active {
+  cursor: grabbing;
+}
+
+.dropZone,
+.dropActive {
+  border-radius: 6px;
+  outline: 2px dashed transparent;
+  outline-offset: 0.75rem;
+}
+.dropActive {
+  outline-color: var(--ouro);
+}

@@ -1,0 +1,37 @@
+.shelf {
+  margin-top: 4rem;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.header h2 {
+  font-size: 1.8rem;
+}
+.header h2 small {
+  margin-left: 0.5rem;
+  font-family: var(--fonte-texto);
+  font-size: 1rem;
+  color: var(--suave);
+}
+
+/* Fileira de 6 jogos (padrão) ou de 5; em telas menores cabem menos */
+.row,
+.rowFive {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 2.5rem 1.5rem;
+}
+.rowFive { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+
+@media (max-width: 1100px) {
+  .row, .rowFive { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .row, .rowFive { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

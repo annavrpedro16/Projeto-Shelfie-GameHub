@@ -1,0 +1,84 @@
+/* Cores do design */
+:root {
+  --fundo: #0a1a18; /* fundo da página */
+  --trilho: #05100e; /* menu lateral e sombras */
+  --verde: #00675b; /* prateleiras */
+  --linha: #1f8072; /* bordas */
+  --capa: #123430; /* capa sem imagem */
+  --xis: #1e4a44; /* o "X" da capa */
+  --tinta: #e6f2ef; /* texto principal */
+  --suave: #93b5ae; /* texto secundário */
+  --ouro: #f2b84b; /* botão principal e estrelas */
+
+  --fonte-titulo: "Bricolage Grotesque", system-ui, sans-serif;
+  --fonte-texto: "Atkinson Hyperlegible", system-ui, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--fundo);
+  color: var(--tinta);
+  font-family: var(--fonte-texto);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--fonte-titulo);
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Contorno visível para quem navega pelo teclado */
+:focus-visible {
+  outline: 2px solid var(--ouro);
+  outline-offset: 2px;
+}
+
+/* Botões usados em várias páginas */
+.btn {
+  padding: 0.85rem 2.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+}
+.btn-primary {
+  background: var(--ouro);
+  color: var(--trilho);
+  border: 0;
+}
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.btn-outline {
+  background: none;
+  color: var(--tinta);
+  border: 1.5px solid var(--tinta);
+}
+.btn-primary:not(:disabled):hover,
+.btn-outline:hover {
+  filter: brightness(1.1);
+}
+
+/* Botão link */
+.link-button {
+  padding: 0;
+  background: none;
+  border: 0;
+  color: var(--suave);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: underline;
+}
+.link-button:hover {
+  color: var(--tinta);
+}

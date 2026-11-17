@@ -1,0 +1,88 @@
+.header h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.1;
+}
+.header p {
+  color: var(--suave);
+  font-size: 1.1rem;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.controls > form {
+  flex: 1;
+  max-width: none;
+  height: 3.5rem;
+}
+
+.sort {
+  padding: 0 1.5rem;
+  background: none;
+  border: 1.5px solid var(--linha);
+  border-radius: 999px;
+  color: var(--tinta);
+  font: inherit;
+  cursor: pointer;
+}
+.sort option {
+  background: var(--fundo);
+}
+
+.tabs {
+  display: flex;
+  gap: 0.5rem 2rem;
+  margin-top: 1rem;
+  overflow-x: auto; /* no celular as abas deslizam para o lado */
+  border-bottom: 1px solid var(--verde);
+}
+
+.tab,
+.tabActive {
+  flex: none;
+  padding: 0.6rem 0;
+  background: none;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  color: var(--suave);
+  font-size: 1.05rem;
+}
+.tab:hover {
+  color: var(--tinta);
+}
+.tabActive {
+  color: var(--tinta);
+  font-weight: 700;
+  border-bottom-color: var(--ouro);
+}
+
+.count {
+  margin: 1.25rem 0 -2.5rem; /* encosta na prateleira logo abaixo */
+  font-size: 0.9rem;
+  color: var(--suave);
+}
+
+.empty {
+  margin-top: 4rem;
+  padding: 3rem 1rem;
+  border: 1.5px dashed var(--verde);
+  text-align: center;
+  color: var(--suave);
+}
+
+.more {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+@media (max-width: 700px) {
+  .controls {
+    flex-direction: column;
+  }
+  .sort {
+    height: 3rem;
+  }
+}
