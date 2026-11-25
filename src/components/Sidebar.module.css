@@ -75,13 +75,21 @@
   line-height: 1.1rem;
 }
 
-.avatar {
+.avatar,
+.avatarActive {
   margin-top: auto; /* empurra a bolinha para o fim do menu */
   width: 40px;
   height: 40px;
+  flex: none;
+  border: 0;
   border-radius: 50%;
   background: var(--verde);
+  color: var(--tinta);
+  font-family: var(--fonte-titulo);
+  font-size: 1.1rem;
 }
+.avatar:hover { filter: brightness(1.2); }
+.avatarActive { outline: 2px solid var(--ouro); outline-offset: 3px; }
 
 /* Celular: vira uma barra fixa embaixo da tela */
 @media (max-width: 700px) {
@@ -96,7 +104,8 @@
     padding: 0.4rem 0;
     z-index: 10;
   }
-  .logo, .avatar { display: none; }
+  .logo { display: none; }
+  .avatar, .avatarActive { margin: 0 0.75rem; align-self: center; width: 34px; height: 34px; }
   .nav { flex-direction: row; gap: 0; }
   .item, .active {
     flex: 1;

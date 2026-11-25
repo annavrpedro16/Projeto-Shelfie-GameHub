@@ -9,6 +9,7 @@ Um Game Hub feito em React para o projeto final da capacitação CP2eJr 2026.2: 
 - **Página do jogo**: capa, nome, descrição, gêneros, plataformas, avaliação e o botão "Adicionar à biblioteca".
 - **Biblioteca**: os jogos separados em prateleiras (Jogando agora, Quero jogar, Zerados). Para mudar o status, escolha direto na lista da etiqueta do jogo ou arraste o jogo para outra prateleira.
 - **Lista de desejos**: jogos salvos para depois.
+- **Conta**: login simples pelo círculo do menu (nome, e-mail e senha). É só visual: não há servidor, e nada fica salvo depois de recarregar a página.
 
 Os dados são de jogos existentes, guardados em `src/data/games.js`. As notas e o número de avaliações são fictícios.
 

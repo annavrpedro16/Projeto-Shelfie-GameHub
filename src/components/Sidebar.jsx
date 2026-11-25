@@ -9,7 +9,7 @@ const icons = {
   desejos: <path d="M12 20s-8-5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 9c0 6-8 11-8 11z" />,
 }
 
-export function Sidebar({ page, onNavigate, libraryCount, wishlistCount }) {
+export function Sidebar({ page, onNavigate, libraryCount, wishlistCount, user }) {
   // Lista dos itens do menu: o .map() abaixo cria um botão para cada um
   const items = [
     { id: 'inicio', label: 'Início' },
@@ -41,7 +41,14 @@ export function Sidebar({ page, onNavigate, libraryCount, wishlistCount }) {
         ))}
       </nav>
 
-      <div className={styles.avatar} aria-hidden="true" />
+      {/* Círculo da conta: mostra a inicial do nome depois de entrar */}
+      <button
+        className={page === 'conta' ? styles.avatarActive : styles.avatar}
+        onClick={() => onNavigate('conta')}
+        aria-label={user ? `Conta de ${user.name}` : 'Entrar na conta'}
+      >
+        {user && user.name[0].toUpperCase()}
+      </button>
     </aside>
   )
 }

@@ -6,6 +6,7 @@ import { Catalog } from './pages/Catalog'
 import { GameDetails } from './pages/GameDetails'
 import { Library } from './pages/Library'
 import { Wishlist } from './pages/Wishlist'
+import { Account } from './pages/Account'
 import styles from './App.module.css'
 
 export function App() {
@@ -15,7 +16,8 @@ export function App() {
   const [genre, setGenre] = useState('Todos')  // filtro do catálogo
   const [search, setSearch] = useState('')     // texto da busca
   const [library, setLibrary] = useState([])   
-  const [wishlist, setWishlist] = useState([]) 
+  const [wishlist, setWishlist] = useState([])
+  const [user, setUser] = useState(null)       // null = ninguém entrou na conta
 
   // Só os ids da biblioteca, para checar com .includes()
   const libraryIds = library.map(item => item.id)
@@ -58,6 +60,7 @@ export function App() {
         onNavigate={navigate}
         libraryCount={library.length}
         wishlistCount={wishlist.length}
+        user={user}
       />
 
       <div className={styles.content}>
@@ -108,6 +111,7 @@ export function App() {
             onNavigate={navigate}
           />
         )}
+        {page === 'conta' && <Account user={user} onLogin={setUser} onLogout={() => setUser(null)} />}
 
         <footer className={styles.footer}>Shelfie, um GameHub feito para a capacitação CP2eJr 2026.2</footer>
       </div>
