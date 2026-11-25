@@ -1,7 +1,7 @@
 import styles from './Cover.module.css'
 
-// Capa do jogo. Ainda não temos imagens, então mostra o espaço reservado com um "X" e o nome.
-export function Cover({ name, className = '' }) {
+// Capa do jogo: mostra a imagem ou, se não tiver, o espaço reservado com um "X" e o nome.
+export function Cover({ name, image, className = '' }) {
   return (
     <div className={`${styles.cover} ${className}`} role="img" aria-label={`Capa de ${name}`}>
       {/* O "X": duas linhas, uma de cada canto até o canto oposto */}
@@ -10,6 +10,8 @@ export function Cover({ name, className = '' }) {
         <line x1="100" y1="0" x2="0" y2="100" />
       </svg>
       <span>{name}</span>
+      {/* A imagem fica por cima do "X"; se não carregar, o "X" com o nome continua aparecendo */}
+      {image && <img className={styles.image} src={image} alt="" loading="lazy" />}
     </div>
   )
 }

@@ -29,7 +29,7 @@ export function Home({ libraryIds, onAddToLibrary, onOpenGame, onOpenCatalog }) 
     <div>
       {/* Destaque da semana */}
       <section className={styles.hero}>
-        <Cover name={game.name} className={styles.heroCover} />
+        <Cover name={game.name} image={game.image} className={styles.heroCover} />
 
         <div className={styles.heroInfo}>
           <p className={styles.eyebrow}>Em destaque esta semana</p>

@@ -33,7 +33,7 @@ export function GameDetails({
 
       <section className={styles.hero}>
         <div className={styles.shelfCover}>
-          <Cover name={game.name} className={styles.cover} />
+          <Cover name={game.name} image={game.image} className={styles.cover} />
         </div>
 
         <div className={styles.info}>
@@ -91,12 +91,13 @@ export function GameDetails({
       </section>
 
       <section className={styles.screens}>
-        <h2>Capturas de tela</h2>
+        <h2>Galeria</h2>
         <div className={styles.screenRow}>
-          {[1, 2, 3].map((number) => (
+          {game.gallery.map((src, index) => (
             <Cover
-              key={number}
-              name={`Captura de tela ${number}`}
+              key={src}
+              name={`Imagem ${index + 1} de ${game.name}`}
+              image={src}
               className={styles.screen}
             />
           ))}

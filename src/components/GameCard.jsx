@@ -11,7 +11,7 @@ export function GameCard({ game, rank, onOpen, children }) {
       {/* Clicar na capa abre a página do jogo */}
       <button className={styles.top} onClick={() => onOpen(game.id)} aria-label={`Ver detalhes de ${game.name}`}>
         {rank && <span className={styles.rank} aria-hidden="true">{rank}</span>}
-        <Cover name={game.name} className={styles.cover} />
+        <Cover name={game.name} image={game.image} className={styles.cover} />
       </button>
 
       <div className={rank ? styles.labelRanked : styles.label}>

@@ -25,3 +25,11 @@
   background: var(--capa);
   padding: 0.15rem 0.4rem;
 }
+
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* preenche a capa sem esticar a imagem */
+}
